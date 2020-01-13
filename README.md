@@ -1,5 +1,5 @@
 
-This projectruns on ruby and requires the `CSV` and `active_support/all` gems to be installed. 
+This project runs on ruby and requires the `CSV` and `active_support/all` gems to be installed. 
 I believe that CSV is included with ruby but active_support will need to be installed
 (if you have rails installed, you're done here).
 
