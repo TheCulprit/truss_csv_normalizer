@@ -66,19 +66,18 @@ def to_24(time, is_pm)
   time = is_pm ? time + 12.hours : time
 end
 
+def resolve_offset(datetime)
+  offset = datetime.split(//).last(6)
+  offset[2] = (offset[2].to_i - 3).to_s
+  offset.join
+end
+
 def padded_zip_code(zip_code)
   zip_code.rjust(5, "0")
 end
 
 def hh_mm_ss_to_seconds(duration)
   duration.split(':').map { |a| a.to_f }.inject(0) { |a, b| a * 60 + b}
-end
-
-
-def resolve_offset(datetime)
-  offset = datetime.split(//).last(6)
-  offset[2] = (offset[2].to_i - 3).to_s
-  offset.join
 end
 
 main
