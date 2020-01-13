@@ -17,10 +17,10 @@ def resolve_encoding
   f.close
 end
 
-def create_rows_with_headers(f)
-  f.read
-  rows = ["#{f.headers.join(',')}\n"]
-  f.rewind
+def create_rows_with_headers(csv)
+  csv.read
+  rows = ["#{csv.headers.join(',')}\n"]
+  csv.rewind
   rows
 end
 
