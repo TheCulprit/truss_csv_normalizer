@@ -3,7 +3,7 @@ require 'active_support/all'
 require 'CSV'
 
 def main
-  scrubbed_string = resolve_encoding
+  resolve_encoding
   csv = CSV.open("sample_tmp.csv", headers: true, encoding: 'UTF-8')
   rows = create_rows_with_headers(csv)
   $stdout << poulate_rows(csv, rows)
