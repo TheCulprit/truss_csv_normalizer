@@ -30,7 +30,6 @@ def poulate_rows(csv, rows)
       row["Timestamp"] = parsed_timestamp(row["Timestamp"])
       row["ZIP"] = padded_zip_code(row["ZIP"])
       row["FullName"] = row["FullName"].upcase unless row["Notes"].nil?
-      row["Address"].gsub!(/[^[:print:]]/i, '�')
       row["FooDuration"] = hh_mm_ss_to_seconds(row["FooDuration"]) 
       row["BarDuration"] = hh_mm_ss_to_seconds(row["BarDuration"])
       row["TotalDuration"] = row["FooDuration"] + row["BarDuration"]
